@@ -3,22 +3,24 @@ package com.example.demo.springsecuritynewfeatures.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.springsecuritynewfeatures.Repository.InMemoryEmployeerepository;
 import com.example.demo.springsecuritynewfeatures.models.Employee;
 
 @Service
-
-public class InMemoryEmployeeServiceImp implements EmployeeService {
+@Qualifier(value ="inMemoryEmployeeService")
+public class InMemoryEmployeeServiceImp implements IEmployeeService {
 
     @Autowired
+  
     private InMemoryEmployeerepository inMemoryEmployeerepository;
 
     @Override
-    public void addEmployee(Employee emp) {
+    public Employee addEmployee(Employee emp) {
         // TODO Auto-generated method stub
-        inMemoryEmployeerepository.addEmployee(emp);
+       return  inMemoryEmployeerepository.addEmployee(emp);
 
     }
 
@@ -35,8 +37,9 @@ public class InMemoryEmployeeServiceImp implements EmployeeService {
     }
 
     @Override
-    public void updateEmployee(Employee employee) {
+    public Employee updateEmployee(Employee employee) {
         // TODO Auto-generated method stub
+        return employee;
 
     }
 

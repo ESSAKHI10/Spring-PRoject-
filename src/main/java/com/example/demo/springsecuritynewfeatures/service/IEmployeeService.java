@@ -4,9 +4,9 @@ import java.util.List;
 
 import com.example.demo.springsecuritynewfeatures.models.Employee;
 
-public interface EmployeeService {
+public interface IEmployeeService {
     // save an emp
-    void addEmployee(Employee emp);
+    Employee addEmployee(Employee emp);
 
     // get all employees
     List<Employee> getAllEmployee();
@@ -15,7 +15,7 @@ public interface EmployeeService {
     Employee findById(Integer id);
 
     // Update emplyee
-    void updateEmployee(Employee employee);
+    Employee updateEmployee(Employee employee);
 
     // delete an emplyee
     Boolean deleteById(Integer id);
