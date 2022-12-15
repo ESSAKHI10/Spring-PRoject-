@@ -19,6 +19,7 @@ public class UserDao {
                                         "Essakhihamzae@gmail.com",
                                         "password",
                                         Collections.singleton(new SimpleGrantedAuthority("ROLE_ADMINE"))),
+                                        
                         new User(
                                         "user@gmail.com",
                                         "password",

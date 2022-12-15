@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.example.demo.springsecuritynewfeatures.models.Employee;
+import com.example.demo.springsecuritynewfeatures.Entity.Employee;
 
 @Repository
 public class InMemoryEmployeerepository {

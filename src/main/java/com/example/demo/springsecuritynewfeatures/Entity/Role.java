@@ -1,10 +1,9 @@
-package com.example.demo.springsecuritynewfeatures.models;
+package com.example.demo.springsecuritynewfeatures.Entity;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Entity;
- import javax.persistence.Id;
-
+import javax.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,12 +12,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Employee {
+public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-    private String firstName;
-    private String username;
-    private String email;
-
+    private Long id;
+    private String code;
+    private String name;
 }

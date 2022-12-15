@@ -1,4 +1,4 @@
-package com.example.demo.springsecuritynewfeatures.service;
+package com.example.demo.springsecuritynewfeatures.service.Imp;
 
 import java.util.List;
 
@@ -6,8 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.springsecuritynewfeatures.Entity.Employee;
 import com.example.demo.springsecuritynewfeatures.Repository.InMemoryEmployeerepository;
-import com.example.demo.springsecuritynewfeatures.models.Employee;
+import com.example.demo.springsecuritynewfeatures.service.IEmployeeService;
 
 @Service
 @Qualifier(value ="inMemoryEmployeeService")

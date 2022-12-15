@@ -2,7 +2,7 @@ package com.example.demo.springsecuritynewfeatures.service;
 
 import java.util.List;
 
-import com.example.demo.springsecuritynewfeatures.models.Employee;
+import com.example.demo.springsecuritynewfeatures.Entity.Employee;
 
 public interface IEmployeeService {
     // save an emp

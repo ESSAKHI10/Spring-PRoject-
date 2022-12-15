@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.springsecuritynewfeatures.Repository.UserDao;
 import com.example.demo.springsecuritynewfeatures.Util.JwtUtils;
 import com.example.demo.springsecuritynewfeatures.dto.AuthenticationRequest;
+import com.example.demo.springsecuritynewfeatures.service.IAccountService;
 
 @RestController
 @RequestMapping("/api/v2/auth")
@@ -23,7 +24,7 @@ public class AuthController {
     @Autowired
     private AuthenticationManager authenticationManager;
     @Autowired
-    private UserDao userDao;
+    private   IAccountService accountService;
     @Autowired
     private JwtUtils jwtUtils;
 
@@ -34,9 +35,9 @@ public class AuthController {
         System.out.println("im authenticateing : " + request);
 
         authenticationManager
-                .authenticate(new UsernamePasswordAuthenticationToken(request.getEmail(),
+                .authenticate(new UsernamePasswordAuthenticationToken(request.getUsername(),
                         request.getPassword()));
-        final UserDetails user = userDao.findUserByEmail(request.getEmail());
+        final UserDetails user = accountService.loadUserByUsername(request.getUsername());
         System.out.println("we found somtheing : " + user);
         if (user != null) {
             return ResponseEntity.ok(jwtUtils.generateToken(user));

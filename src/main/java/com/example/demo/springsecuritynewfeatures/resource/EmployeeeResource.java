@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.springsecuritynewfeatures.models.Employee;
+import com.example.demo.springsecuritynewfeatures.Entity.Employee;
 import com.example.demo.springsecuritynewfeatures.service.IEmployeeService;
 
 import static org.springframework.web.servlet.support.ServletUriComponentsBuilder.fromCurrentRequest;
@@ -61,8 +61,10 @@ public class EmployeeeResource {
     // return
     // ServletUriComponentsBuilder.fromCurrentRequest().path("{id}").buildAndExpand(id).toUri();
     // }
-    private static URI getLocation(Integer id) {
+    // private static URI getLocation(Integer id) {
+        // return fromCurrentRequest().path(//"{id}").buildAndExpand(id).toUri();
+    //}
+    protected static URI getLocation(Integer id) {
         return fromCurrentRequest().path("{id}").buildAndExpand(id).toUri();
     }
-
 }
